@@ -7,7 +7,7 @@ A self-modified pyAudioAnalysis package is applied to extract audio features fro
 
 ## Additional Functions created on the base of functions in `MidTermFeatures.py` from pyAudioAnalysis
 
-### `irectory_feature_extraction_no_avg`
+### `directory_feature_extraction_no_avg`
 This function is able to extract features from a directory without averaging each file.
 
 ### `multiple_directory_feature_extraction_no_avg`

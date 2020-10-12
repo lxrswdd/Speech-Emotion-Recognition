@@ -5,7 +5,7 @@ This project involves in speech features extraction and training.
 # Feature Extraction
 A self-modified pyAudioAnalysis package is applied to extract audio features from the .wav files.
 
-## ModifiedFunctions from MidTermFeatures.py
+## Additional Functions created on the base of functions in MidTermFeatures.py from pyAudio
 
 ### directory_feature_extraction_no_avg
 This function is able to extract features from a directory without averaging each file.

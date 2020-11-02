@@ -33,7 +33,8 @@ pyAudioAnalysis library is modified by the addition of functions in order to ext
     Multi-directories extraction for 3D array.
 
 #### Window selection
-    In order to determine the window size, window step and window number.`read_audio_length` file is executed to read the audios' length in the directories and visualize the length by plotting a histogram.
+    In order to determine the window size, window step and window number.
+    `read_audio_length` file is executed to read the audios' length in the directories and visualize the length by plotting a histogram.
 ## Other functions
 
 - `masked_normalization()`

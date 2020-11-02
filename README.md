@@ -2,8 +2,11 @@
 
 ## General
 - A model to classify the emotions of speeches
-- Features were extracted by modified pyAudioAnalysis library
+- Features were extracted by modified [pyAudioAnalysis](https://github.com/tyiannak/pyAudioAnalysis) library
 - Preproccess the features.
+
+
+
 
 
 ## Feature Extraction

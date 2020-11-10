@@ -36,7 +36,7 @@ pyAudioAnalysis library is modified by the addition of functions in order to ext
     In order to determine the window size, window step and window number.
     `read_audio_length` file is executed to read the audios' length in the directories and visualize the length by plotting a histogram.
 ## Other functions
-
+Other functions defined and used were listed in `LXRfunc.py`
 - `masked_normalization()`
 
 ## Models

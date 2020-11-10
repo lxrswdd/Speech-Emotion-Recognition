@@ -39,3 +39,5 @@ pyAudioAnalysis library is modified by the addition of functions in order to ext
 
 - `masked_normalization()`
 
+## Models
+All the models used during for the project were listed in the `LXRmodels.py`

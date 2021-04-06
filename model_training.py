@@ -8,19 +8,19 @@ from keras_self_attention import SeqSelfAttention
 from keras_multi_head import MultiHead
 import os
 
-steps = 50 #定义timestep
+steps = 50 #定义timestep; define timestep
 
-#数据组地址定义
+#数据组地址定义; Define the data directory
 source_dir = '/mnt/lxr/datasets/Fujitsu/binary'
 X_train_dir = os.path.join(source_dir,'X_training.csv')
 y_train_dir = os.path.join(source_dir,'y_training.csv')
 X_test_dir = os.path.join(source_dir,'X_testing.csv')
 y_test_dir = os.path.join(source_dir,'y_testing.csv')
 
-#读取数据
+#读取数据; Read the data
 X_train,y_train,X_test,y_test,num_classes = load_dataset(X_train_dir,y_train_dir,X_test_dir,y_test_dir,steps,0,136,True)
 
-#数据处理
+#数据处理; Feature engineering
 X_train,y_train = binary_smote(X_train,y_train) #对训练集进行SMOTE
 X_train = masked_normalization(X_train) #对数据集进行统一化
 X_test = masked_normalization(X_test) #对数据集进行统一化
@@ -35,6 +35,8 @@ def opt_select(optimizer, learning_rate):
 
     """
     为模型选择优化器
+    Selection of optimizer
+    
     :param optimizer:优化器名字
     :param learning_rate: 学习率
     :return:
@@ -59,7 +61,9 @@ def opt_select(optimizer, learning_rate):
 
 def residual_attention_model(X_train, y_train, X_val, y_val, X_test, num_classes, dropout=0.2, batch_size=68,
                     learning_rate=0.0001, epochs=20, optimizer='Adam'):
-    """residual attention 模型"""
+    """residual attention 模型
+       residual attention model
+    """
     lstm_unit = 16
 
     inputs = Input(shape=(X_train.shape[1], X_train.shape[2]))
@@ -100,7 +104,9 @@ def residual_attention_model(X_train, y_train, X_val, y_val, X_test, num_classes
 
 def Multiplcative_self_attention(X_train, y_train, X_val, y_val, X_test, num_classes, dropout=0.2, batch_size=68,
                          learning_rate=0.0001, epochs=20, optimizer='Adam'):
-    """多层self_attention"""
+    """多层self_attention;
+    Multiplicative self_attention model
+    """
     lstm_unit = 256
 
     model = tf.keras.models.Sequential()
@@ -195,13 +201,13 @@ def MultiHead_self_attention(X_train, y_train, X_val, y_val, X_test, num_classes
 
     return history, yhat
 
-#模型参数定义
+#模型参数定义; Define the hyperparameters
 num_classes = num_classes
 batch_size = 256
 epochs = 20
 learning_rate = 0.001
 
-#训练模型
+#训练模型; Model training
 history,y_pred = MultiHead_self_attention(X_train, y_train, X_val, y_val,X_test,num_classes=8,dropout=0.2, batch_size=64, learning_rate=learning_rate,epochs=epochs,optimizer='Adam')
-#训练结果
+#训练结果 # plot the report and confusion matrix and acc loss curves
 plots(history,y_test,y_pred)

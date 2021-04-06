@@ -8,7 +8,6 @@
 
 
 
-
 ## Feature Extraction
 pyAudioAnalysis library is modified by the addition of functions in order to extract original features from .wav files and present them in 3D arrays.
 
@@ -35,9 +34,11 @@ pyAudioAnalysis library is modified by the addition of functions in order to ext
 #### Window selection
     In order to determine the window size, window step and window number.
     `read_audio_length` file is executed to read the audios' length in the directories and visualize the length by plotting a histogram.
+    
 ## Other functions
-Other functions defined and used were listed in `LXRfunc.py`
-- `masked_normalization()`
+Other functions defined and used were listed in `ultil.py`
+
 
 ## Models
-All the models used during for the project were listed in the `LXRmodels.py`
+All the models used during for the project were listed in the `model_training.py`
+There are three attention based models. Residual attention, Multiplicative attention and MultiHead Attention.

@@ -14,11 +14,13 @@ from sklearn.metrics import classification_report
 def load_dataset(X_train_directory,y_train_directory,X_test_directory,y_test_directory,window_num,trunc_start,truc_end,truncation = False):
     """
     该函数能够读取已经抽取好的音频特征，并对其进行切割。
+    This function reads extracted features from CSV file and truncate the features.
+    
     :param X_train_directory: 训练组地址
     :param y_train_directory: 测试族标签地址
     :param X_test_directory: 测试组地址
     :param y_test_directory: 测试组标签地址
-    :param window_num: timestep数量
+    :param window_num: timestep 数量
     :param trunc_start: 特征剪裁起始点，最低值0
     :param truc_end: 特征剪裁终点，最高值136
     :param truncation: 默认False,不进行特征剪裁，保留0-136特征
